@@ -3,40 +3,566 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unmade Game - Offline Local Board</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Nextexture — Premium Matte Styling Powder</title>
+    <style>
+        /* --- MODERN EDITORIAL DESIGN SYSTEM --- */
+        :root {
+            --bg: #0b0b0b;
+            --surface: #141414;
+            --border: #262626;
+            --text-primary: #f5f5f5;
+            --text-secondary: #8e8e93;
+            --accent: #ffffff;
+            --accent-dim: #cccccc;
+            --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* --- GLOBAL LAYOUT ANCHORS --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 4%;
+            background: rgba(11, 11, 11, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        .brand-logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav ul a {
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            transition: color 0.3s;
+        }
+
+        nav ul a:hover {
+            color: var(--text-primary);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .cart-trigger {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 0.9rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cart-count {
+            background: var(--accent);
+            color: var(--bg);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.1rem 0.4rem;
+            border-radius: 10px;
+        }
+
+        /* --- HERO SPLASH SECTION --- */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 0 4%;
+            margin-top: 5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 1rem 2.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--accent-dim);
+        }
+
+        .hero-visual {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(145deg, #1d1d1d, #141414);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .placeholder-svg {
+            opacity: 0.15;
+            width: 120px;
+            height: 120px;
+            color: #ffffff;
+        }
+
+        /* --- PRODUCT CATALOGUE SHOWCASE --- */
+        .catalog {
+            padding: 6rem 4%;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 3rem;
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* --- PRODUCT SLOT MATRIX TEMPLATE --- */
+        .product-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: #444;
+        }
+
+        .product-thumb {
+            width: 100%;
+            height: 280px;
+            background: #1c1c1e;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-meta {
+            margin-bottom: 1.5rem;
+        }
+
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+        }
+
+        .product-price {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .btn-secondary {
+            background: none;
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+            width: 100%;
+            padding: 0.75rem;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        /* --- EMBEDDED CART DRAWER PANELS --- */
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100%;
+            background: var(--surface);
+            border-left: 1px solid var(--border);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+            z-index: 200;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cart-drawer.active {
+            right: 0;
+        }
+
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .close-cart {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cart-item-info h4 {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .cart-item-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .remove-item {
+            background: none;
+            border: none;
+            color: #ff453a;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .cart-footer {
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- FOOTER SPEC --- */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 4rem 4%;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .cart-drawer { width: 100%; right: -100%; }
+        }
+    </style>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
 
-    <main id="game-wrapper">
-        <header id="game-header">
-            <h1>UNMADE GAME</h1>
-            <p>Static Grid Mode (HTML Configured)</p>
-        </header>
+    <!-- STICKY BAR CONTROLLER -->
+    <header>
+        <div class="brand-logo">Nextexture</div>
+        <nav>
+            <ul>
+                <li><a href="#shop">Shop Powder</a></li>
+                <li><a href="#shop">Our Texture</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="cart-trigger" onclick="toggleCart()">
+                Cart (<span id="cartCount">0</span>)
+            </button>
+        </div>
+    </header>
 
-        <!-- CORE GAME BOARD: Put all your card slots manually right here -->
-        <section id="game-board">
-            
-            <div class="card-slot" data-slot-id="1" data-card-id="card_fire_01" data-rarity="rare">
-                <span class="slot-label">Slot 1</span>
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <h1>Gravity Defying Matte Volume.</h1>
+                <p>Engineered for high-precision modern texture. No weight, no grease, total control. Re-imagining styling powder formulas for elite styling performance.</p>
+                <a href="#shop" class="btn">Explore Collection</a>
             </div>
-
-            <div class="card-slot" data-slot-id="2" data-card-id="card_water_03" data-rarity="common">
-                <span class="slot-label">Slot 2</span>
+            <div class="hero-visual">
+                <svg class="placeholder-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                    <path d="M12 21c4.418 0 8-1.791 8-4V7c0-2.209-3.582-4-8-4S4 4.791 4 7v10c0 2.209 3.582 4 8 4z"/>
+                    <path d="M4 7c0 2.209 3.582 4 8 4s8-1.791 8-4"/>
+                    <path d="M4 12c0 2.209 3.582 4 8 4s8-1.791 8-4"/>
+                </svg>
             </div>
+        </div>
+    </section>
 
-            <div class="card-slot" data-slot-id="3" data-card-id="card_earth_07" data-rarity="epic">
-                <span class="slot-label">Slot 3</span>
-            </div>
-
-            <div class="card-slot" data-slot-id="4" data-card-id="empty" data-rarity="none">
-                <span class="slot-label">Slot 4 (Empty)</span>
-            </div>
-
-        </section>
+    <main class="catalog" id="shop">
+        <h2 class="section-title">The Styling Range</h2>
+        <div class="product-grid" id="catalogGrid"></div>
     </main>
 
-    <!-- Connect your engine -->
-    <script src="game.js"></script>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Order</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItemsContainer"></div>
+        
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">$0.00</span>
+            </div>
+            <button class="btn" style="width: 100%;" onclick="executeMockCheckout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Nextexture Inc. Designed for premium performance. Native local storage engine.</p>
+    </footer>
+
+    <script>
+        const PRODUCT_INVENTORY = [
+            {
+                id: "next_pow_ultra_01",
+                title: "Ultra Matte Powder",
+                description: "Vaporous lightweight formula for maximum lift and an absolute dry texture finish.",
+                price: 34.00
+            },
+            {
+                id: "next_pow_mega_02",
+                title: "Mega Volume Booster",
+                description: "Concentrated micro-particles built for thick hair control and complex restructuring locks.",
+                price: 38.00
+            },
+            {
+                id: "next_pow_flex_03",
+                title: "Flex Hold Texturizer",
+                description: "Pliable finish allowing seamless restyling throughout the dynamic day framework.",
+                price: 32.00
+            }
+        ];
+
+        let activeCart = [];
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderStorefrontCatalog();
+            loadPersistedCartData();
+        });
+
+        function renderStorefrontCatalog() {
+            const grid = document.getElementById("catalogGrid");
+            grid.innerHTML = "";
+
+            PRODUCT_INVENTORY.forEach(product => {
+                const card = document.createElement("article");
+                card.className = "product-card";
+                card.innerHTML = `
+                    <div class="product-thumb">
+                        <svg class="placeholder-svg" style="width:60px; height:60px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                            <path d="M12 21c4.418 0 8-1.791 8-4V7c0-2.209-3.582-4-8-4S4 4.791 4 7v10c0 2.209 3.582 4 8 4z"/>
+                        </svg>
+                    </div>
+                    <div class="product-meta">
+                        <h3 class="product-title">${product.title}</h3>
+                        <p class="product-desc">${product.description}</p>
+                        <div class="product-price">$${product.price.toFixed(2)}</div>
+                    </div>
+                    <button class="btn-secondary" onclick="addItemToOrderQueue('${product.id}')">Add To Bag</button>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function toggleCart() {
+            document.getElementById("cartDrawer").classList.toggle("active");
+        }
+
+        function addItemToOrderQueue(productId) {
+            const matchedProduct = PRODUCT_INVENTORY.find(p => p.id === productId);
+            if (!matchedProduct) return;
+
+            const existingCartItem = activeCart.find(item => item.id === productId);
+
+            if (existingCartItem) {
+                existingCartItem.quantity += 1;
+            } else {
+                activeCart.push({ ...matchedProduct, quantity: 1 });
+            }
+
+            syncCartStateToDisk();
+            document.getElementById("cartDrawer").classList.add("active");
+        }
+
+        function removeCartItemIndex(productId) {
+            activeCart = activeCart.filter(item => item.id !== productId);
+            syncCartStateToDisk();
+        }
+
+        function syncCartStateToDisk() {
+            localStorage.setItem("nextexture_cart_cache", JSON.stringify(activeCart));
+            updateCartInterfaceView();
+        }
+
+        function loadPersistedCartData() {
+            const diskData = localStorage.getItem("nextexture_cart_cache");
+            if (diskData) {
+                try {
+                    activeCart = JSON.parse(diskData);
+                    updateCartInterfaceView();
+                } catch(e) {
+                    console.error("Local storage error resetting tracking channels.", e);
+                    activeCart = [];
+                }
+            }
+        }
+
+        function updateCartInterfaceView() {
+            const listContainer = document.getElementById("cartItemsContainer");
+            const badgeCount = document.getElementById("cartCount");
+            const totalIndicator = document.getElementById("cartSubtotal");
+
+            listContainer.innerHTML = "";
+            let unitsCounter = 0;
+            let totalRunningSum = 0;
+
+            if (activeCart.length === 0) {
+                listContainer.innerHTML = \`<p style="color: var(--text-secondary); text-align: center; margin-top: 4rem;">Your shopping bag is empty.</p>\`;
+            } else {
+                activeCart.forEach(item => {
+                    unitsCounter += item.quantity;
+                    totalRunningSum += (item.price * item.quantity);
+
+                    const row = document.createElement("div");
+                    row.className = "cart-item";
+                    row.innerHTML = `
+                        <div class="cart-item-info">
+                            <h4>\${item.title}</h4>
+                            <p>Qty: \${item.quantity} × $\${item.price.toFixed(2)}</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-weight:700; font-size:0.9rem; margin-bottom: 0.25rem;">$\${(item.price * item.quantity).toFixed(2)}</div>
+                            <button class="remove-item" onclick="removeCartItemIndex('\${item.id}')">Remove</button>
+                        </div>
+                    `;
+                    listContainer.appendChild(row);
+                });
+            }
+
+            badgeCount.innerText = unitsCounter;
+            totalIndicator.innerText = \`$\${totalRunningSum.toFixed(2)}\`;
+        }
+
+        function executeMockCheckout() {
+            if (activeCart.length === 0) {
+                alert("Please add texture products to your order before initiating checkout.");
+                return;
+            }
+            alert(`[Nextexture Checkout Simulator]\n\nRouting payload to test gateway sequence...\nProcessing total value: \${document.getElementById("cartSubtotal").innerText}\n\nThis window links natively once your live Stripe Publishable Token is injected!`);
+        }
+    </script>
 </body>
 </html>
